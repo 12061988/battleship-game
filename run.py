@@ -34,14 +34,14 @@ def create_ships(board):
      5 ships creating by computer
     """
     for ship in range(5):
-        ship_row, ship_column = randint(0,8), randint(0,8)
+        ship_row, ship_column = randint(0,7), randint(0,7)
         while board[ship_row][ship_column] == "X":
             ship_row, ship_column = get_ship_location()
         board[ship_row][ship_column] = "X"
 
 def get_ship_location():
     row = input("Enter the row of the ship:\n ").upper()
-    while row not in "123456789":
+    while row not in "12345678":
         print('A selection of valid row is required')
         row = input("Enter the row of the ship:\n ").upper()
     column = input("Enter the column of the ship:\n ").upper()
