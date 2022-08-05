@@ -1,19 +1,22 @@
 from random import randint
-
-#Board for  ship position
-CACHE_BOARD = [[" "] * 9 for x in range(9)]
-# Board for running points and missing targets
-IMAGINE_BOARD = [[" "] * 9 for i in range(9)]
+"""
+Board for  ship position
+"""
+CACHE_BOARD = [[" "] * 8 for x in range(8)]
+"""
+Board for running points and missing targets
+"""
+IMAGINE_BOARD = [[" "] * 8  for i in range(8)]
 
 def print_board(board):
-    print("  A B C D E F G H I")
-    print(" +-----------------+ ")
+    print("  A B C D E F G H ")
+    print(" +---------------+ ")
     row_number = 1
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-letters_to_numbers = {
+letters_to_nums = {
 
     'A': 0,
     'B': 1,
@@ -22,8 +25,7 @@ letters_to_numbers = {
     'E': 4,
     'F': 5,
     'G': 6,
-    'H': 7,
-    'I': 8
+    'H': 7   
     
 }
 
@@ -46,7 +48,7 @@ def get_ship_location():
     while column not in "ABCDEFGH":
         print('A correct column selection is required')
         column = input("Enter the column of the ship: ").upper()
-    return int(row) - 1, letters_to_numbers[column]
+    return int(row) - 1, letters_to_nums[column]
 
 
 def count_hit_ships(board):
@@ -65,11 +67,11 @@ if __name__ == "__main__":
     create_ships(CACHE_BOARD)
     turns = 15
     while turns > 0:
-        print('Welcome to our battleships competition\nGuess a battleship location')
+        print('Welcome to our battleships competition\nTry to visualize a fight zone')
         print_board(IMAGINE_BOARD)
         row, column = get_ship_location()
         if IMAGINE_BOARD[row][column] == "-":
-            print("You guessed that one already.")
+            print("You have already viewed it.")
         elif CACHE_BOARD[row][column] == "X":
             print("BRAVO")
             IMAGINE_BOARD[row][column] = "X" 
@@ -79,7 +81,7 @@ if __name__ == "__main__":
             IMAGINE_BOARD[row][column] = "-"   
             turns -= 1     
         if count_hit_ships(IMAGINE_BOARD) == 5:
-            print("You got them!")
+            print("Great! You got them!")
             break
         print("You have " + str(turns) + " turns left")
         if turns == 0:
