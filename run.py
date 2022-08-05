@@ -42,7 +42,7 @@ def get_ship_location():
         row = input("Enter the row of the ship: ").upper()
     column = input("Enter the column of the ship: ").upper()
     while column not in "ABCDEFGH":
-        print('Not an appropriate choice, please select a valid column')
+        print('please select an appropriate column')
         column = input("Enter the column of the ship: ").upper()
     return int(row) - 1, letters_to_numbers[column]
 
@@ -73,13 +73,13 @@ if __name__ == "__main__":
             IMAGINE_BOARD[row][column] = "X" 
             turns -= 1  
         else:
-            print("MISS!")
+            print("SORRY!")
             IMAGINE_BOARD[row][column] = "-"   
             turns -= 1     
         if count_hit_ships(IMAGINE_BOARD) == 5:
-            print("You win!")
+            print("You got it!")
             break
         print("You have " + str(turns) + " turns left")
         if turns == 0:
-            print("You ran out of turns")
+            print("You are out")
 
