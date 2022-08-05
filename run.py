@@ -1,13 +1,13 @@
 from random import randint
 
 #Board for  ship position
-CACHE_BOARD = [[" "] * 8 for x in range(8)]
+CACHE_BOARD = [[" "] * 9 for x in range(9)]
 # Board for running points and missing targets
-IMAGINE_BOARD = [[" "] * 8 for i in range(8)]
+IMAGINE_BOARD = [[" "] * 9 for i in range(9)]
 
 def print_board(board):
-    print("  A B C D E F G H ")
-    print(" +---------------+ ")
+    print("  A B C D E F G H I")
+    print(" +-----------------+ ")
     row_number = 1
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -23,6 +23,7 @@ letters_to_numbers = {
     'F': 5,
     'G': 6,
     'H': 7,
+    'I': 8
     
 }
 
@@ -31,14 +32,14 @@ def create_ships(board):
      5 ships creating by computer
     """
     for ship in range(5):
-        ship_row, ship_column = randint(0,7), randint(0,7)
+        ship_row, ship_column = randint(0,8), randint(0,8)
         while board[ship_row][ship_column] == "X":
             ship_row, ship_column = get_ship_location()
         board[ship_row][ship_column] = "X"
 
 def get_ship_location():
     row = input("Enter the row of the ship:\n ").upper()
-    while row not in "12345678":
+    while row not in "123456789":
         print('A selection of valid row is required')
         row = input("Enter the row of the ship:\n ").upper()
     column = input("Enter the column of the ship:\n ").upper()
