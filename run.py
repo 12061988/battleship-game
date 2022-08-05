@@ -7,7 +7,7 @@ IMAGINE_BOARD = [[" "] * 8 for i in range(8)]
 
 def print_board(board):
     print("  A B C D E F G H ")
-    print("  +-+-+-+-+-+-+-+ ")
+    print(" +---------------+ ")
     row_number = 1
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -37,11 +37,11 @@ def create_ships(board):
         board[ship_row][ship_column] = "X"
 
 def get_ship_location():
-    row = input("Enter the row of the ship: ").upper()
+    row = input("Enter the row of the ship:\n ").upper()
     while row not in "12345678":
         print('A selection of valid row is required')
-        row = input("Enter the row of the ship: ").upper()
-    column = input("Enter the column of the ship: ").upper()
+        row = input("Enter the row of the ship:\n ").upper()
+    column = input("Enter the column of the ship:\n ").upper()
     while column not in "ABCDEFGH":
         print('A correct column selection is required')
         column = input("Enter the column of the ship: ").upper()
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     create_ships(CACHE_BOARD)
     turns = 15
     while turns > 0:
-        print('Guess a battleship location')
+        print('Welcome to our battleships competition\nGuess a battleship location')
         print_board(IMAGINE_BOARD)
         row, column = get_ship_location()
         if IMAGINE_BOARD[row][column] == "-":
@@ -78,7 +78,7 @@ if __name__ == "__main__":
             IMAGINE_BOARD[row][column] = "-"   
             turns -= 1     
         if count_hit_ships(IMAGINE_BOARD) == 5:
-            print("You got it!")
+            print("You got them!")
             break
         print("You have " + str(turns) + " turns left")
         if turns == 0:
