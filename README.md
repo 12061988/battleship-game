@@ -20,11 +20,22 @@ The computer and user will take fifteen turns to find all 5 of the ships, should
 <img width="828" alt="Capture d’écran 2022-08-06 à 10 35 22" src="https://user-images.githubusercontent.com/107476894/183241591-11fce2c4-f0b9-4ed2-a33c-21afc7389f23.png">
 
 
-## Existing Features
 
  - The game keeps count of turns and displays this to the user
  - The user must press enter to continue to the next turn to allow them to properly see what is happening at each turn
  - The game is played against the computer
+ 
+## Validators Testing
+<img width="767" alt="Capture d’écran 2022-08-06 à 11 26 18" src="https://user-images.githubusercontent.com/107476894/183243196-bd8cd63c-9e24-457c-864e-2dea1d36837d.png">
+
+
+ 
+
+## Unfixed Bugs
+
+  - The image above shows the unfixed bugs
+  - I tried fixing them but I was short with time and I couldn't book a mentor session because it was too late to schedule one.
+
 
 ## Deployment
 
