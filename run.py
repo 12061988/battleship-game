@@ -37,28 +37,40 @@ def show_board(hit,miss,comp):
             place = place + 1
         print (x," ", row)   
 
-def check_shot(shot,boat1,hit,miss,comp):
+def check_shot(shot,boat1,boat2,hit,miss,comp):
 
     if shot in boat1:
         boat1.remove(shot)     
         if len(boat1) > 0:
             hit.append(shot)
         else:
+            comp.append(shot)     
+
+    elif shot in boat2:
+        boat1.remove(shot)     
+        if len(boat2) > 0:
+            hit.append(shot)
+        else:
             comp.append(shot)    
     else:
         miss.append(shot)        
 
-    return boat1,hit,miss,comp
+    return boat1,boat2,hit,miss,comp
 
 
-boat1 = [45,46,47]
+boat1 = [36,46,47]
+boat2 = [5,15,25]
 hit = []
 miss = []
 comp = []
 
-for i in range(10):
+for i in range(15):
      guesses = hit + miss + comp
      shot = get_shot()
-     boat1,hit,miss,comp = check_shot(shot,boat1,hit,miss,comp)
-     show_board(hit,miss,comp)        
+     boat1,boat2,hit,miss,comp = check_shot(shot,boat1,boat2,hit,miss,comp)
+     show_board(hit,miss,comp)  
 
+     if len(boat1) < 1 and len(boat2) < 1:
+        print("you've won")     
+        break
+print ("finished")    
