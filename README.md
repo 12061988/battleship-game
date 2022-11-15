@@ -16,7 +16,8 @@ The game will then request that the user enters a column and row number (essenti
 The computer and user will take fifteen turns to find all 2 of the boats, should all 15 turns be taken without finding 2 boats, the game will show "Finished" else "You've Won".
 ## Features
 
-<img width="828" alt="Capture d’écran 2022-08-06 à 10 35 22" src="https://user-images.githubusercontent.com/107476894/183241591-11fce2c4-f0b9-4ed2-a33c-21afc7389f23.png">
+<img width="821" alt="Capture d’écran 2022-11-15 à 11 25 58" src="https://user-images.githubusercontent.com/107476894/201896178-7c63aea3-0090-470b-a43d-f5a20f19077a.png">
+
 
 
 
