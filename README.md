@@ -11,10 +11,9 @@ Battleship is known worldwide as a pencil and paper game which dates from World 
 
 ## How To Play
 
-The game will welcome the user before randomly generating 5 ships locations on the board.
-The game will then request that the user enters a column and row number (essentially, co-ordinates) of the location they suspect a battleship is laid. If that location is on a battleship, it is a hit and marked as ‘’X’’. If the location is not on a battleship, it is a miss and marked as ‘’ - ‘’.
-The computer and user will take fifteen turns to find all 5 of the ships, should all 15 turns be taken without finding 5 ships, the game will state who has had the most hits and display them as the winner.
-
+The game will welcome the user before randomly generating 2 boats locations on the board.
+The game will then request that the user enters a column and row number (essentially, co-ordinates) of the location they suspect a battleship is laid. If that location is on a battleship, it is a hit and marked as ‘’o’’. If the location is not on a battleship, it is a miss and marked as ‘’x‘’.
+The computer and user will take fifteen turns to find all 2 of the boats, should all 15 turns be taken without finding 2 boats, the game will show "Finished" else "You've Won".
 ## Features
 
 <img width="828" alt="Capture d’écran 2022-08-06 à 10 35 22" src="https://user-images.githubusercontent.com/107476894/183241591-11fce2c4-f0b9-4ed2-a33c-21afc7389f23.png">
